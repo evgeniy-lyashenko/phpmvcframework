@@ -21,12 +21,12 @@ class Request
 
     public function isGet()
     {
-        return $this->method === 'get';
+        return $this->method() === 'get';
     }
 
     public function isPost()
     {
-        return $this->method === 'post';
+        return $this->method() === 'post';
     }
 
     public function getBody()
