@@ -1,3 +1,8 @@
+<?php
+
+use app\core\Application;
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -36,6 +41,12 @@
                 </div>
             </div>
         </nav>
+        <?php
+        if (Application::$app->session->getFlash('success')) : ?>
+            <div class="alert alert-success">
+                <?php echo Application::$app->session->getFlash('success') ?>
+            </div>
+        <?php endif; ?>
         {{content}}
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     </div>
